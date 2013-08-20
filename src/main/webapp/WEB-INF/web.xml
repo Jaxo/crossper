@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <display-name>crossper</display-name>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/applicationContext.xml;/WEB-INF/crossper-servlet.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <filter>
+        <filter-name>crossper</filter-name>
+        <filter-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</filter-class>
+        <init-param>
+            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-value>com.crossper.resources;com.crossper.exceptions.mapper</param-value>
+        </init-param>
+        <init-param>
+            <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>com.sun.jersey.config.property.JSPTemplatesBasePath</param-name>
+            <param-value>/</param-value>
+        </init-param>
+        <init-param>
+            <param-name>com.sun.jersey.config.property.WebPageContentRegex</param-name>
+            <param-value>(/(images|js|css)/?.*)|(/min/(images|js|css)/?.*)|(/.*\.jsp)|(/WEB-INF/.*\.jsp)|
+                (/WEB-INF/.*\.jspf)|(/.*\.html)|(/favicon\.ico)|
+                (/robots\.txt)
+            </param-value>
+        </init-param>
+       <!-- <init-param>
+            <param-name>com.sun.jersey.spi.container.ContainerResponseFilters</param-name>
+            <param-value>com.sun.jersey.server.linking.LinkFilter</param-value>
+        </init-param>-->
+        <!--<load-on-startup>1</load-on-startup>-->
+    </filter>
+
+    <filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+
+  <!--  <filter>
+        <filter-name>autoLoginFilter</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+        <init-param>
+            <param-name>targetBeanName</param-name>
+            <param-value>autoLoginFilter</param-value>
+        </init-param>
+    </filter>-->
+    <filter>
+	    <filter-name>HTTPCacheFilter</filter-name>
+	    <filter-class>com.crossper.filters.HttpCacheFilter</filter-class>
+	    <init-param>
+	        <param-name>Cache-Control</param-name>
+	        <param-value>max-age=3600, public</param-value>
+	    </init-param>
+	</filter>
+	 
+	<filter-mapping>
+	    <filter-name>HTTPCacheFilter</filter-name>
+	    <url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+	    <filter-name>HTTPCacheFilter</filter-name>
+	    <url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+	    <filter-name>HTTPCacheFilter</filter-name>
+	    <url-pattern>*.gif</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+	    <filter-name>HTTPCacheFilter</filter-name>
+	    <url-pattern>*.png</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+	    <filter-name>HTTPCacheFilter</filter-name>
+	    <url-pattern>*.ico</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+	    <filter-name>HTTPCacheFilter</filter-name>
+	    <url-pattern>*.jpg</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+	    <filter-name>HTTPCacheFilter</filter-name>
+	    <url-pattern>*.jpeg</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+                 <!-- <url-pattern>/web/j_spring_security_logout</url-pattern> -->
+	</filter-mapping>
+<!--
+    <filter-mapping>
+        <filter-name>autoLoginFilter</filter-name>
+        <url-pattern>/api/users/*</url-pattern>
+    </filter-mapping>-->
+	
+    <filter-mapping>
+        <filter-name>crossper</filter-name>
+        <url-pattern>/*</url-pattern>
+        <!--<url-pattern>/web/api/*</url-pattern>-->
+    </filter-mapping>
+
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+
+    <welcome-file-list>
+        <welcome-file>min/web/index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>

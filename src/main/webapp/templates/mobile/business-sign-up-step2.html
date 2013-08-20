@@ -1,0 +1,92 @@
+
+<div class="register-steps-block">
+	<div class="register-steps-back">
+		<ul>
+			<li><a class="number">1</a> <label class="text">Business
+					Info</label></li>
+
+			<li class="active"><a class="number">2</a> <label
+				class="text">Create Offers</label></li>
+
+			<li><a class="number">3</a> <label class="text">Confirmation</label>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<!-- registration 2-->
+<div class="register-box" id="register1">
+<div class="alert alert-error errorText" style="display:none" id="serverErrorDiv">
+ 
+</div>
+	<ul class="register-form">
+		<li>
+			<label class="width20per">
+				Title:
+				<span class="mandatory"  id="titleErrorAsteric" style="display: none;">*</span>
+			</label> 
+			<input type="text" name="title" value="{{title}}" class="textbox70"> 
+			<span class="sucess-icon ci-sprite"  style="display:none;"></span>
+			<span id="titleErrorContainer" class="error-text" style="display: none;"></span>
+		</li>
+
+		<li>
+			<label class="width20per">Description:</label> 
+			<textarea name="description" class="textarea">{{description}}</textarea>
+		</li>
+
+		<li>
+			<label class="width20per">Start Date:</label>
+			<input name="startDate" type="text" class="textbox-medium sucess-border" value="{{startDate}}" data-role="datebox" data-options='{"mode": "calbox","overrideDateFormat": "%Y-%m-%d"}'
+			placeholder="2013-09-24">
+			
+		</li>
+		<li>
+			<label class="width20per">End Date:</label> 
+			<input name="endDate" type="text" class="textbox-medium sucess-border" value="{{endDate}}" data-role="datebox" data-options='{"mode": "calbox","overrideDateFormat": "%Y-%m-%d"}' 
+			placeholder="2013-09-24"> 
+		</li>
+		<li>	
+		   <fieldset data-role="controlgroup">
+                    <label class="width20per marginT8">Validity:</label>
+                    <span class="width65per">
+                        <input type="radio" name="validity" id="radio-choice-1" value="everyday" checked="checked" />
+                        <label for="radio-choice-1" class="qunty-label float-left">Everyday</label>
+                    </span>
+                    <label class="width20per marginT8">&nbsp;</label>
+                    <span class="width65per">
+                        <input type="radio" name="validity" id="radio-choice-2" value="weekdays"  />
+                        <label for="radio-choice-2" class="qunty-label">Weekdays</label>
+                    </span>
+                    <label class="width20per marginT8">&nbsp;</label>
+                    <span class="width65per">
+                        <input type="radio" name="validity" id="radio-choice-3" value="weekends" />
+                        <label for="radio-choice-3" class="qunty-label ">Weekends Only</label>
+                    </span>
+            </fieldset>
+		</li>
+
+		<li>
+			<label for="checkbox-1a" class="qunty-label " data-iconpos="right">Limited Qty:</label> 
+			{{#if limitedQuantity}}
+				<input name="limitedQuantity" id="checkbox-1a" type="checkbox" checked> 
+             {{else}}
+				<input name="limitedQuantity" id="checkbox-1a" type="checkbox"> 
+			{{/if}}
+			
+			<label	class="width15per">
+				Quantity:
+				<span class="mandatory"  id="quantityErrorAsteric" style="display: none;">*</span>
+			</label> 
+			<input type="text" disabled="disabled" name="quantity" value="{{quantity}}" class="textbox-mini"> 
+			<span class="sucess-icon ci-sprite" style="display:none;"></span>
+			<span id="quantityErrorContainer" class="error-text" style="display: none;"></span>
+		</li>
+
+		<li>
+			<a id="add-offer-btn" class="button save-button" data-role="button">Add Offer</a>
+		</li>
+	</ul>
+
+	<div class=" clearfix"></div>
+</div>

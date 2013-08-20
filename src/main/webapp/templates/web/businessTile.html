@@ -1,0 +1,27 @@
+<div class="span4">
+	<div class="img-block">
+		<img src="../../images/web/dashboard_img.png" width="147" height="114"
+			alt="photo">
+	</div>
+	<div></div>
+</div>
+<div class="span8">
+	<h2>
+		<span class="border-gray1 pull-right">
+		 	<a class="btn btn-gray-edit" id="editProfile" data-toggle="tab">Edit Profile<span class="icon-editprofile"></span>
+		</a>
+		</span>
+		{{name}}
+	</h2>
+	<div class="tags">{{subCategory}}</div>
+	<div class="address">
+		{{#each locations}}
+			{{street}},{{state}}
+			<br>
+		{{/each}}
+	</div>
+	<div class="mart10px">
+		<a href="#." class="icon-email marr-7px">{{email}}</a>
+		<a href="#." class="icon-phone">{{phone}}</a>
+	</div>
+</div>

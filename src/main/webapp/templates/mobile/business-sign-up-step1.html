@@ -1,0 +1,150 @@
+<div class="register-steps-block">
+	<div class="register-steps-back">
+		<ul>
+			<li class="active" id="step1"><a class="number">1</a>
+				<label class="text">Business Info</label></li>
+
+			<li id="step2"><a class="number">2</a> <label
+				class="text">Create Offers</label></li>
+
+			<li id="step3"><a class="number">3</a> <label
+				class="text">Confirmation</label></li>
+		</ul>
+	</div>
+</div>
+
+<!-- registration 1-->
+<div class="register-box" id="register1">
+
+	<div class="register-info">Add your business name, address, contact details and upload business logo. Logo will appear in offers published to customer's mobile. Your business email address is your login. Create a password. Create offers and get promoted on Crossper platform.</div>
+	<ul class="register-form">
+		<li>
+			<label class="width35per">Business Name:
+				<span class="mandatory"  id="nameErrorAsteric" style="display: none;">*</span>
+			</label>
+			<input type="text" id="businessName" name="name" value="{{name}}" class="textbox " placeholder="Bobs Burger's">
+			<span class="sucess-icon ci-sprite" style="display:none;"></span> 
+			<span id="nameErrorContainer" class="error-text" style="display: none;"></span>
+		</li>
+		<li>
+			<label class="width45per">Business Logo:</label>
+            <span class="photo-block"></span>
+            <div class="fileUpload btn btn-primary" >
+                <span>Upload Photo</span>
+                <input id="img-uploader" accept="image/*;capture=camera" type="file" name="businessPhoto">
+            </div>
+
+		</li>
+
+		<li>
+			<label class="width35per">Address:</label>
+			<input type="text" id="address" name="address" value="{{address}}" class="textbox " placeholder="145 Market St">
+		</li>
+                <li>
+			<label class="width35per">City:  <span class="mandatory" id="cityErrorAsteric" style="display: none;">*</span></label>
+			<input type="text" id="city" name="city" value="{{city}}" class="textbox " placeholder="Berkley">
+                        <span class="sucess-icon ci-sprite" style="display:none;"></span>
+			<span id="cityErrorContainer" class="error-text" style="display: none;"></span>
+		</li>
+
+		<li>
+			<label class="width45per">
+				State:
+			<span class="mandatory" id="stateErrorAsteric" style="display: none;">*</span>
+			</label>
+			<input type="text" id="state" name="state" value="{{state}}" class="textbox-small" placeholder="CA">
+			<span class="sucess-icon ci-sprite" style="display:none;"></span>
+			<span id="stateErrorContainer" class="error-text" style="display: none;"></span>
+		</li>
+		
+		<li>
+			<label class="width45per">
+				Zip Code:
+				<span class="mandatory" id="zipCodeErrorAsteric" style="display: none;">*</span>
+			</label> 
+			<input type="text" id="zipCode" name="zipCode" value="{{zipCode}}" class="textbox-small"	placeholder="94115"> 
+			<span class="sucess-icon ci-sprite" style="display:none;"></span>
+			<span id="zipCodeErrorContainer" class="error-text" style="display: none;"></span>
+		</li>
+
+
+		<li>
+			<label class="width35per float-left">Category:</label> 
+			<select	name="category" id="select-category">
+			</select>
+			<span class="mandatory" id="categoryErrorAsteric" style="display: none;">*</span>
+			<span id="categoryErrorContainer" class="error-text" style="display: none;"></span>
+		</li>
+
+		<li>
+			<select name="subCategory" id="select-subcategory">
+			</select>
+			<span class="mandatory" id="subCategoryErrorAsteric" style="display: none;">*</span>
+			<span id="subCategoryErrorContainer" class="error-text" style="display: none;"></span>
+		</li>
+
+		<li>
+			<label class="width35per float-left">
+				Website Address:
+				<span class="mandatory" id="websiteErrorAsteric" style="display: none;">*</span>
+			</label>
+			<input type="text" name="website" placeholder="" class="textbox" value="{{website}}" > 
+			<span class="sucess-icon ci-sprite" style="display:none;"></span>
+			<span id="websiteErrorContainer" class="error-text" style="display: none;"></span>
+		</li>
+		<li>
+			<label class="width35per float-left">
+				Average Sales Price:
+				<span class="mandatory" id="averagePriceErrorAsteric" style="display: none;">*</span>
+			</label>
+			<input type="text" name="averagePrice" placeholder="$$ amount" class="textbox" value="{{averagePrice}}" > 
+			<span class="sucess-icon ci-sprite" style="display:none;"></span>
+			<span id="averagePriceErrorContainer" class="error-text" style="display: none;"></span>
+		</li>
+		<li>
+			<label class="width35per">
+				Contact E-Mail:
+				<span class="mandatory" id="emailErrorAsteric" style="display: none;">*</span>
+			</label> 
+			<input type="text" id="email" name="email" value="{{email}}" class="textbox" placeholder="example@example.com"> 
+			<span class="sucess-icon ci-sprite" style="display:none;"></span>
+			<span id="emailErrorContainer" class="error-text" style="display: none;"></span>
+		</li>
+
+		<li>
+			<label class="width35per"> 
+				Contact Phone:
+			<span class="mandatory" id="phoneErrorAsteric" style="display: none;">*</span>
+			</label> 
+			<input type="text" id="phone" name="phone" value="{{phone}}" class="textbox" placeholder="(425)123 - 6426"> 
+			<span class="error-icon ci-sprite" style="display:none;"></span>
+			<span id="phoneErrorContainer" class="error-text" style="display: none;"></span>
+		</li>
+
+		<li>
+			<label class="width35per">
+				Password:
+				<span class="mandatory" id="passwordAsteric" style="display: none;">*</span>
+			</label> 
+			<input type="password" id="password" name="password" value="" class="textbox" placeholder=""> 
+			<span class="sucess-icon ci-sprite" style="display:none;"></span>
+			<span id="passwordErrorContainer" class="error-text" style="display: none;"></span>
+		</li>
+
+		<li>
+			<label class="width35per">
+				Confirm Password:
+				<span class="mandatory" id="confirmPasswordAsteric" style="display: none;">*</span>
+			</label> 
+			<input type="password" id="confirmPassword" name="confirmPassword" value="" class="textbox" placeholder=""> 
+			<span class="sucess-icon ci-sprite" style="display:none;"></span>
+			<span id="confirmPasswordErrorContainer" class="error-text" style="display: none;"></span>
+		</li>
+		
+		<li>
+			<a class="button blue-button float-left submit"	id="sign-up-button" data-role="button"> Submit</a>
+		</li>
+	</ul>
+
+	<div class=" clearfix"></div>
+</div>

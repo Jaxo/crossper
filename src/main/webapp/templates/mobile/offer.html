@@ -1,0 +1,26 @@
+<div class="offer-image-block">
+	<a href="#popupBasic" data-rel="dialog"> <img
+		src="../businesses/{{businessId}}/businessPhoto" width="162" height="160" alt="">
+	</a>
+</div>
+
+<div class="offer-description-block float-left">
+	<span class="ci-sprite favourties"></span>
+	<span id="deleteOffer" class="ci-sprite deleteoffer-icon"></span>
+	<div class="offer-stall-name">{{businessInfo.name}}</div>
+	<div class="offer-title-line">{{title}}</div>
+	<div>
+		<span class="offer-city-name float-left">{{businessInfo.address}}</span> <span
+			class="offer-distance float-right"> 1.2 Miles</span>
+	</div>
+	<div class="clearfix"></div>
+	<div class="description display-none">
+		<div>{{description}}</div>
+		<div class="clearfix"></div>
+		<div class="offer-buttons-block">
+			<a data-rel="back" id="claimOffer" class="button offer-button" data-role="button" style="width:100%;">Claim Offer</a> 
+			<a data-rel="back"	id="shareOffer" class="button offer-button" data-role="button" style="width:100%;">Share offer</a> 
+			<a data-rel="back" id="directions" class="button offer-button"	data-role="button" style="width:100%;">Directions</a>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+          http://www.springframework.org/schema/beans/spring-beans.xsd 
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+        http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd">
+    
+    <bean id="userResource" class="com.crossper.resources.UserResource" >
+        <property name="userService" ref="userService" />
+        <property name="socialLoginHelper">
+            <bean id="socialLoginHelper" class="com.crossper.resources.UserResource$SocialLoginHelper">
+                <property name="connectionFactoryLocator" ref="connectionFactoryLocator"/>
+                <property name="rememberMeServices" ref="rememberMeServices"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="offerResource" class="com.crossper.resources.OfferResource" >
+        <property name="offerService"  ref="offerService" />
+    </bean>
+    
+    
+    <bean id="mobileResource" class="com.crossper.resources.MobileResources" >
+        <property name="fbClientId"  value="${facebook.clientId}"/>
+    </bean>
+    
+    <bean id="businessResource" class="com.crossper.resources.BusinessResource" >
+        <property name="bizService" ref="bizService" />
+        <property name="contactEmail" value="${crossper.contactEmail}" />
+        <property name="contactPhone" value="${crossper.contactPhone}" />
+    </bean>
+    
+    <bean id="userOfferResource" class="com.crossper.resources.UserOfferResource">
+        <property name="redirectUrl" value="${crossper.website}" />
+        <property name="offerService"  ref="offerService" />
+    </bean>
+   <!--<bean id="signupResource" class="com.crossper.resources.SignupResource" >
+        <property name="userDao" ref="userDao"/>
+        <property name="bizTypeDao" ref="bizTypeDao"/>
+        <property name="emailService" ref="emailService" />
+        <property name="offerDao" ref="offerDao"/>
+    </bean> -->
+
+    <bean id="globalExceptionMapper" class="com.crossper.exceptions.mapper.GlobalExceptionMapper" scope="singleton"/>
+
+    <bean id="systemExceptionMapper" class="com.crossper.exceptions.mapper.SystemExceptionMapper" scope="singleton"/>
+
+    <bean id="userServiceExceptionMapper" class="com.crossper.exceptions.mapper.UserServiceExceptionMapper" scope="singleton"/>
+     <bean id="bizServiceExceptionMapper" class="com.crossper.exceptions.mapper.BizServiceExceptionMapper" scope="singleton"/>
+   
+</beans>

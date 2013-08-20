@@ -1,0 +1,50 @@
+
+	<!-- Master Block-->
+		<!-- Header Block-->
+	  <header data-role="header">
+      
+			<div class="ci-header-main clearfix position-relative">
+    
+            <a id="globalBackBtn" class=""> <div id="ios-arrow-left" title="Back" ></div></a>
+			<!--<a href="#."><span class="ci-setting-icon ci-sprite"></span></a>-->	
+    
+			</div>
+            
+            <div class="ci-header-inner clearfix">
+				<!-- Logo-->
+				<div class="signup-logo">
+					<a href="index.html" data-transition="slide"><img src="/crossper/images/mobile/logo.png" alt="" /></a>
+				</div>
+               
+			</div>
+		</header>
+		<!-- Middle Block -->
+		<form id="sign-up-form" action="#">
+			<section data-role="content" class="clearfix setting-wrapper">
+				<!-- offer1-->
+	            <div class="form-box">
+				<input   value="{{username}}" type="text"  class="textfield" placeholder="Name" name="username">
+				<span class="h-border"></span>
+	            <input   value="{{email}}" type="text" class="textfield" placeholder="E-mail" name="email">
+	            <span class="h-border"></span>
+	            <input  value="{{password}}" type="password" class="textfield" placeholder="Password" name="password"> 
+	            </div>
+	          
+			    <label for="checkbox-1a" class="noti-label">Agree to Terms of Service</label>
+					    <input name="agreeTerms" id="checkbox-1a" type="checkbox">
+		
+				<div id="errorDiv" style="height: 80px;">
+					<span id="usernameError" class="error-text"></span>
+					<span id="emailError" class="error-text"></span>
+					<span id="passwordError" class="error-text"></span>
+					<span id="agreeTermsError" class="error-text"></span>
+				</div>
+				
+				<div class="save-button-big-bg mar-b-1em">
+			    	<a class="button save-button-big" id="sign-up-button" data-role="button" >Join Crossper</a>
+			    </div>
+			 
+			</section>
+        </form>
+	
+ 

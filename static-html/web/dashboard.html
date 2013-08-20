@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Crossper- Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- styles -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,700' rel='stylesheet' type='text/css'>
+
+<link href="../css/web/bootstrap.css" rel="stylesheet">
+<link href="../css/web/bootstrap-responsive.css" rel="stylesheet">
+<link href="../css/web/retune.css" rel="stylesheet" type="text/css">
+<link href="../css/web/crossper-web.css" rel="stylesheet" type="text/css">
+<link href="../css/web/jquery.sb.css" rel="stylesheet" type="text/css">
+<link href="../css/web/check-box-radiobutton.css" rel="stylesheet" type="text/css">
+<link href="../css/web/datepicker.css" rel="stylesheet" type="text/css">
+<link href="../css/web/jquery.jscrollpane.css" rel="stylesheet" type="text/css">
+
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<!--fluid-container-->
+<div class="main-wrapper">
+  <div class="outer-wrapper border-bottom"> 
+    <!--header-container-->
+    <div class="container-fluid ">
+      <div class="row-fluid ">
+        <div class="span12 header">
+          <div class="span3"> <a href="#." class="crossper-logo"></a></div>
+          <div class="span9">
+            <ul class="nav nav-pills pull-right">
+              <li class="active"> <a href="#">Blog </a> </li>
+              <li><a href="#">Contact </a></li>
+              <li><a href="#" ><span class="logout "></span>Log out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--header-container--> 
+  </div>
+  <!--middle-container-->
+  <div class="container-fluid ">
+    <div class="row-fluid ">
+      <div class="span12 dashboard-graybg ">
+        <div class="outer-wrapper dashboard-wrapper">
+          <div class="span3 left-tab-panel">
+            <ul class="nav nav-tabs" id="myTab">
+              <li class="active"><a data-toggle="tab" href="#dashboard">Dashboard</a></li>
+              <li><a data-toggle="tab" href="#offers">Offers</a></li>
+              <li ><a data-toggle="tab" href="#promoters">Promoters</a></li>
+              <li class="setting"><a data-toggle="tab" href="#settings" >Profile</a></li>
+              <li><a data-toggle="tab" href="#locations">Locations</a></li>
+              <li> <a data-toggle="tab" href="#printqr" class="print-button">Print qr code<span class="icon-print"></span></a></li>
+            </ul>
+            <div> </div>
+          </div>
+          <div class="span9">
+            <div class="span8">
+              <div class="tab-content" id="myTabContent">
+                <div id="dashboard"  class="tab-pane fade active in"> 
+                  
+                  <!--- Info block --->
+                  <div class="row-fluid">
+                    <div class=" span12">
+                      <div class="info-block">
+                        <div class="span4">
+                          <div class="img-block"><img src="../images/web/dashboard_img.png" width="147" height="114" alt="photo"></div>
+                          <div> </div>
+                        </div>
+                        <div class="span8">
+                          <h2><span class="border-gray1 pull-right"> <a class="btn btn-gray-edit" href="#settings" data-toggle="tab">Edit Profile<span class="icon-editprofile"></span></a></span>Peets Coffee & Tea</h2>
+                          <div class="tags"> Cafe, Coffee, Bakery</div>
+                          <div class="address">201 Berry St<br>
+                            San Francisco, CA</div>
+                          <div class="mart10px"> <a href="#." class="icon-email marr-7px">contact@emailexamplepetes.com</a> <a href="#." class="icon-phone">(425)-533-1931</a> </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="devider-line "></div>
+                  </div>
+                  <!--- Offers ---->
+                  <div class="row-fluid">
+                    <div class="span12 ">
+                      <div class="info-block">
+                        <h2><a class="btn btn-medium-create pull-right" href="#">Create offer</a>Current Offers <a href="#." class=" graylink">See Archived Offers</a></h2>
+                        <ul class="current-offer-list">
+                          <li>
+                            <div class="white-border-full ">
+                              <label class="offer-blacktext span9">Free cookie with a purchase of a coffee!</label>
+                              <div class="span2 "><span class="border-gray"><a class=" btn-gray  pull-right btn " href="#"> <span class="offer-buttontext">47</span> <span>Claimed</span></a></span> </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="white-border-full ">
+                              <label class="offer-blacktext span9">20% Off for graduating students!</label>
+                              <div class="span2 "><span class="border-gray"><a class=" btn-gray  pull-right btn " href="#"> <span class="offer-buttontext">24</span> <span>Claimed</span></a></span> </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="white-border-full ">
+                              <label class="offer-blacktext span9">Tea & Select Pasteries for $4.50</label>
+                              <div class="span2 "><span class="border-gray"><a class=" btn-gray  pull-right btn " href="#"> <span class="offer-buttontext">16</span> <span>Claimed</span></a></span> </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="white-border-full ">
+                              <label class="offer-blacktext span9">Juice with your breakfast for $2</label>
+                              <div class="span2 "><span class="border-gray"><a class=" btn-gray  pull-right btn " href="#"> <span class="offer-buttontext">11</span> <span>Claimed</span></a></span> </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="white-border-full ">
+                              <label class="offer-blacktext span9">Free cookie with a purchase of a coffee!</label>
+                              <div class="span2 "><span class="border-gray"><a class=" btn-gray  pull-right btn " href="#"> <span class="offer-buttontext">47</span> <span>Claimed</span></a></span> </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="offers"  class="tab-pane fade"> 
+                  <!-- Single Offer -->
+                  <div id="singleoffer" class="display-none"> 
+                    <!--- Info block --->
+                    <div class="row-fluid">
+                      <div class=" span12">
+                        <div class="info-block">
+                          <h5><span class="border-gray1 pull-right"> <a class="btn  btn-edit-offer" href="#." data-toggle="tab">Edit Offer<span class="icon-editprofile"></span></a></span>Free Cookie With a purchase of a Coffee</h5>
+                          <div class="tags">
+                            <label>4 / 11 / 13</label>
+                            <label>to</label>
+                            <label>4 / 17 / 13</label>
+                          </div>
+                          <div class="address">Suspendisse nec lorem tellus, sit amet malesuada libero. Sed et nisl metus. Vestibulum lacinia varius feugiat. Nam elit leo, dignissim in aliquet ut, ultrices eget nibh. Pellentesque in massa ac eros volutpat tristique. Integer ut augue id elit luctus interdum sit amet vitae orci. Suspendisse potenti.</div>
+                          <div class="mart15px">
+                            <div class="width37per marr-35px">
+                              <div class="stats-list-small">
+                                <div class="white-border"><span class="stats-name">Promoted</span><span class="stats-value">254</span></div>
+                                <div class="border-right"></div>
+                                <div class="stats-right"><span class="graph-per"></span><span>12.5%</span></div>
+                              </div>
+                            </div>
+                            <div class="width37per marr-35px">
+                              <div class="stats-list-small">
+                                <div class="white-border"><span class="stats-name">Promoted</span><span class="stats-value">254</span></div>
+                                <div class="border-right"></div>
+                                <div class="stats-right"><span class="graph-per"></span><span>12.5%</span></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                    
+                  </div>
+                  
+                  <!-- Edit Offer-->
+                  <div id="editoffer" class="display-none">
+                    <div class="row-fluid">
+                      <div class="span12">
+                        <div class="info-block editOffer">
+                          <p><i>Edit Offer</i></p>
+                          <div class=" pull-right"> <a href="#" class="deleteOffer"><span>Delete Offer</span><strong>x</strong></a> <a href="#" class="btn btn-medium-create btn-save">Save Offer</a> </div>
+                          <ul class="register-form">
+                            <li class="adjPreview">
+                              <label class="width20per">Title:</label>
+                              <input type="text" value="" class="textbox70 sucess-border" placeholder="Free cookie with a purchase of coffee or tea">
+                              <span class="sucess-icon ci-sprite"></span></li>
+                            <li class="preview ">
+                           
+                            </li>
+                            <li class="adjPreview">
+                              <label class="width20per">Description:</label>
+                              <textarea class="textarea" placeholder="Maecenas dolor eros, sodales sit amet viverra at, cursus ut nulla. Sed sem orci, condimentum molestie elementum eu, interdum ac purus. In sed consequat ipsum. Fusce dapibus felis nec tellus ornare mattis. Maecenas a augue non dui hendrerit volutpat."></textarea>
+                            </li>
+                            
+                            <li>
+                              <label class="width20per">Start Date:</label>
+                              <input name="" class="textbox-medium sucess-border datepicker ci-sprite" data-role="datebox" data-options='{"mode": "calbox"}' placeholder="04 / 11 / 13">
+                            </li>
+                            <li> 
+                              <label class="width20per">End Date:</label>
+                              <input name=""  class="textbox-medium sucess-border datepicker" data-role="datebox" data-options='{"mode": "calbox"}' placeholder="04 / 11 / 13">
+                            </li>
+                            <li>
+                              <label class="width20per marginT8">Validity:</label>
+                              <span class="width65per">
+                             <input name="day" id="" type="radio" class=" float-left">
+                              <label for="checkbox-11" class="qunty-label " data-iconpos="right">Everyday</label>
+                              </span>
+                              
+                              <span class="width65per">
+                               <input name="day" id=""  type="radio" class=" float-left">
+
+                              <label for="checkbox-12" class="qunty-label " data-iconpos="right">Weekdays</label>
+                              </span>
+                              <label class="width20per marginT8">&nbsp;</label>
+                              <span class="width65per">
+                               <input name="day" id="" type="radio" class=" float-left">
+                              <label for="checkbox-13" class="qunty-label " data-iconpos="right">Weekends only</label>
+                              
+                              </span> </li>
+                            <li> <span class="width20per">
+                              <label for="checkbox-1a" class="qunty-label " data-iconpos="right">Limited Qty:</label>
+                              <input name="checkbox-1a" id="checkbox-1a" checked="" type="checkbox">
+                              </span> <span class=" display-inline-block">
+                              <label class="width15per">Quantity:</label>
+                              <input type="text" value="" class="textbox-mini sucess-border" placeholder="100">
+                              <span class="sucess-icon ci-sprite pull-right"></span></li>
+                            </span>
+                          </ul>
+                          <div class=" clearfix"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!--  Offer list-->
+                  
+                  <div id="offerlist">
+                    <div class="row-fluid">
+                      <div class="span12">
+                        <div class="info-block">
+                          <h5><a href="#" class="btn btn-medium-create pull-right">Create offer</a> Active Offers</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row-fluid">
+                      <div class="span12 ">
+                        <div class="info-block1">
+                          <ul class="current-offer-list">
+                            <li>
+                              <div class="white-border-full ">
+                                <label class="offer-blacktext span9">Free cookie with a purchase of a coffee!</label>
+                                <div class="span2 "><span class="border-gray"><a class=" btn-gray  pull-right btn " href="#"> <span class="offer-buttontext">47</span> <span>Claimed</span></a></span> </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="white-border-full ">
+                                <label class="offer-blacktext span9">20% Off for graduating students!</label>
+                                <div class="span2 "><span class="border-gray"><a class=" btn-gray  pull-right btn " href="#"> <span class="offer-buttontext">24</span> <span>Claimed</span></a></span> </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="white-border-full ">
+                                <label class="offer-blacktext span9">Tea & Select Pasteries for $4.50</label>
+                                <div class="span2 "><span class="border-gray"><a class=" btn-gray  pull-right btn " href="#"> <span class="offer-buttontext">16</span> <span>Claimed</span></a></span> </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="white-border-full ">
+                                <label class="offer-blacktext span9">Juice with your breakfast for $2</label>
+                                <div class="span2 "><span class="border-gray"><a class=" btn-gray  pull-right btn " href="#"> <span class="offer-buttontext">11</span> <span>Claimed</span></a></span> </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="white-border-full ">
+                                <label class="offer-blacktext span9">Free cookie with a purchase of a coffee!</label>
+                                <div class="span2 "><span class="border-gray"><a class=" btn-gray  pull-right btn " href="#"> <span class="offer-buttontext">47</span> <span>Claimed</span></a></span> </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="info-block">
+                        <h5>Offer History</h5>
+                        <div class="row-fluid">
+                          <div class="span12 offer-history">
+                            <div class="span1">
+                              <div class="history-img-block"></div>
+                            </div>
+                            <div class="span8"><a href="#.">Sam Cook</a> claimed an offer from <a href="#.">Papa's Pizza</a></div>
+                            <div class="span2">4 / 11 / 13</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="promoters" class="tab-pane fade" >
+                  <div class="row-fluid">
+                    <div class="span12">
+                      <div class="info-block">
+                        <h5><a href="#" class="btn btn-medium-create pull-right">invite business</a>Promoters</h5>
+                        
+                        <div class="register-info mart10px">Lorem ipsum oratio consul explicari duo te, civibus mnesarchum eum eu. Nec movet aliquam inermis at. Eos in quem fastidii. Mei dolores suscipit at, ea verear accommodare nam. Ex ius erroribus salutatus, usu ad doming iriure philosophia, eum.</div>
+                        
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row-fluid">
+                   
+                    <div class="span12">
+                     	<script>$('#temp_id').jScrollPane();</script>
+                    	<div id="temp_id">
+                          <div class="info-block">
+                            <div class="span3">
+                              <div class="pramotors-img-block"><img width="78" height="63" alt="photo" src="../images/web/pramotors_img.png"></div>
+                            </div>
+                            <div class="span9">
+                            
+                              <div class=" span12">
+                              
+                                <h2> </span>Papa's Pizza & Pasta</h2>
+                              </div>
+                              <div class="row-fluid">
+                                <div class="span12">
+                                  <div class=" span4 address1">201 Berry St<br>
+                                    San Francisco, CA</div>
+                                  <div class="span8"> <a class="icon-email marr-7px" href="#.">papaspizzaonline.com</a>  </div>
+                                </div>
+                              </div>
+                            
+                            </div>
+                          </div>
+                          <div class="info-block">
+                            <div class="span3">
+                              <div class="pramotors-img-block"><img width="78" height="63" alt="photo" src="../images/web/pramotors_img.png"></div>
+                              <div> </div>
+                            </div>
+                            <div class="span9">
+                              <div class=" span12">
+                                <h2>Papa's Pizza & Pasta</h2>
+                              </div>
+                              <div class="row-fluid">
+                                <div class="span12">
+                                  <div class=" span4 address1">201 Berry St<br>
+                                    San Francisco, CA</div>
+                                  <div class="span8"> <a class="icon-email marr-7px" href="#.">papaspizzaonline.com</a>   </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="info-block">
+                            <div class="span3">
+                              <div class="pramotors-img-block"><img width="78" height="63" alt="photo" src="../images/web/pramotors_img.png"></div>
+                              <div> </div>
+                            </div>
+                            <div class="span9">
+                              <div class=" span12">
+                                <h2>Papa's Pizza & Pasta</h2>
+                              </div>
+                              <div class="row-fluid">
+                                <div class="span12">
+                                  <div class=" span4 address1">201 Berry St<br>
+                                    San Francisco, CA</div>
+                                  <div class="span8"> <a class="icon-email marr-7px" href="#.">papaspizzaonline.com</a>   </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="info-block">
+                            <div class="span3">
+                              <div class="pramotors-img-block"><img width="78" height="63" alt="photo" src="../images/web/pramotors_img.png"></div>
+                              <div> </div>
+                            </div>
+                            <div class="span9">
+                              <div class=" span12">
+                                <h2>Papa's Pizza & Pasta</h2>
+                              </div>
+                              <div class="row-fluid">
+                                <div class="span12">
+                                  <div class=" span4 address1">201 Berry St<br>
+                                    San Francisco, CA</div>
+                                  <div class="span8"> <a class="icon-email marr-7px" href="#.">papaspizzaonline.com</a></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="info-block">
+                            <div class="span3">
+                              <div class="pramotors-img-block"><img width="78" height="63" alt="photo" src="../images/web/pramotors_img.png"></div>
+                              <div> </div>
+                            </div>
+                            <div class="span9">
+                              <div class=" span12">
+                                <h2>Papa's Pizza & Pasta</h2>
+                              </div>
+                              <div class="row-fluid">
+                                <div class="span12">
+                                  <div class=" span4 address1">201 Berry St<br>
+                                    San Francisco, CA</div>
+                                  <div class="span8"> <a class="icon-email marr-7px" href="#.">papaspizzaonline.com</a></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="info-block">
+                            <div class="span3">
+                              <div class="pramotors-img-block"><img width="78" height="63" alt="photo" src="../images/web/pramotors_img.png"></div>
+                              <div> </div>
+                            </div>
+                            <div class="span9">
+                              <div class=" span12">
+                                <h2>Papa's Pizza & Pasta</h2>
+                              </div>
+                              <div class="row-fluid">
+                                <div class="span12">
+                                  <div class=" span4 address1">201 Berry St<br>
+                                    San Francisco, CA</div>
+                                  <div class="span8"> <a class="icon-email marr-7px" href="#.">papaspizzaonline.com</a></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="info-block">
+                            <div class="span3">
+                              <div class="pramotors-img-block"><img width="78" height="63" alt="photo" src="../images/web/pramotors_img.png"></div>
+                              <div> </div>
+                            </div>
+                            <div class="span9">
+                              <div class=" span12">
+                                <h2></span>Papa's Pizza & Pasta</h2>
+                              </div>
+                              <div class="row-fluid">
+                                <div class="span12">
+                                  <div class=" span4 address1">201 Berry St<br>
+                                    San Francisco, CA</div>
+                                  <div class="span8"> <a class="icon-email marr-7px" href="#.">papaspizzaonline.com</a></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="info-block">
+                            <div class="span3">
+                              <div class="pramotors-img-block"><img width="78" height="63" alt="photo" src="../images/web/pramotors_img.png"></div>
+                              <div> </div>
+                            </div>
+                            <div class="span9">
+                              <div class=" span12">
+                                <h2>Papa's Pizza & Pasta</h2>
+                              </div>
+                              <div class="row-fluid">
+                                <div class="span12">
+                                  <div class=" span4 address1">201 Berry St<br>
+                                    San Francisco, CA</div>
+                                  <div class="span8"> <a class="icon-email marr-7px" href="#.">papaspizzaonline.com</a></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="info-block">
+                            <div class="span3">
+                              <div class="pramotors-img-block"><img width="78" height="63" alt="photo" src="../images/web/pramotors_img.png"></div>
+                              <div> </div>
+                            </div>
+                            <div class="span9">
+                              <div class=" span12">
+                                <h2>Papa's Pizza & Pasta</h2>
+                              </div>
+                              <div class="row-fluid">
+                                <div class="span12">
+                                  <div class=" span4 address1">201 Berry St<br>
+                                    San Francisco, CA</div>
+                                  <div class="span8"> <a class="icon-email marr-7px" href="#.">papaspizzaonline.com</a></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="info-block">
+                        <div class="span3">
+                          <div class="pramotors-img-block"><img width="78" height="63" alt="photo" src="../images/web/pramotors_img.png"></div>
+                          <div> </div>
+                        </div>
+                        <div class="span9">
+                          <div class=" span12">
+                            <h2>Papa's Pizza & Pasta</h2>
+                          </div>
+                          <div class="row-fluid">
+                            <div class="span12">
+                              <div class=" span4 address1">201 Berry St<br>
+                                San Francisco, CA</div>
+                              <div class="span8"> <a class="icon-email marr-7px" href="#.">papaspizzaonline.com</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                   		</div>
+                     
+                    </div>
+                   
+                  </div>
+                  
+                </div>
+                <div id="settings"  class="tab-pane fade  ">
+                  <div class="row-fluid">
+                    <div class="span12">
+                      <div class="info-block">
+                        <h5><a href="#" class="btn btn-medium-create pull-right">Save changes</a> Business Settings </h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-fluid info-block">
+                    <div class="span12">
+                      <div class="span8">
+                        <ul class="register-form register-form1 ">
+                          <li>
+                            <label class="width35per">Business Name:</label>
+                            <input type="text" value="" class="textbox sucess-border" placeholder="Bobs Burger's">
+                            <span class="sucess-icon"></span></li>
+                          <li>
+                            <label class="width35per">Address:</label>
+                            <input type="text" value="" class="textbox " placeholder="Example 145th St">
+                          </li>
+                          <li>
+                            <label class="width20per">State:</label>
+                            <input type="text" value="" class="textbox-small sucess-border" placeholder="CA">
+                            <span class="sucess-icon"></span>
+                            <label class="width15per">Zip Code:</label>
+                            <input type="text" value="" class="textbox-small sucess-border" placeholder="94115">
+                            <span class="sucess-icon"></span> </li>
+                          <li>
+                            <label class="width35per">Category:</label>
+                            <div class=" position-relative pull-left width57per">
+                              <select name="CustomizeSelectBox" id="CurrentPurpose" class="custom-combo round_sb">
+                                <option value="African Restaurant">African Restaurant</option>
+                                <option value="African Restaurant">African Restaurant</option>
+                                <option value="African Restaurant">African Restaurant</option>
+                                <option value="African Restaurant">African Restaurant</option>
+                                <option value="African Restaurant">African Restaurant</option>
+                              </select>
+                            </div>
+                            <span class="sucess-icon"></span></li>
+                          <li>
+                            <div class=" position-relative pull-left width57per">
+                              <select name="CustomizeSelectBox" id="CurrentPurpose" class="custom-combo round_sb">
+                                <option value="African Restaurant">African Restaurant</option>
+                                <option value="African Restaurant">African Restaurant</option>
+                                <option value="African Restaurant">African Restaurant</option>
+                                <option value="African Restaurant">African Restaurant</option>
+                                <option value="African Restaurant">African Restaurant</option>
+                              </select>
+                            </div>
+                            <span class="sucess-icon"></span></li>
+                          <li>
+                            <label class="width35per">Average Sales Price:</label>
+                            <div class=" position-relative pull-left width57per">
+                              <select name="CustomizeSelectBox" id="CurrentPurpose" class="custom-combo round_sb">
+                                <option value="1-10">1-10</option>
+                                <option value="20-30">20-30</option>
+                                <option value="40-50">40-50</option>
+                                <option value="60-70">60-70</option>
+                                <option value="80-90">80-90</option>
+                                <option value="90-100">90-100</option>
+                              </select>
+                            </div>
+                            <span class="sucess-icon"></span></li>
+                          <li>
+                            <label class="width35per">Contact E-Mail:</label>
+                            <input type="text" value="" class="textbox sucess-border"  placeholder="example@example.com">
+                            <span class="sucess-icon"></span></li>
+                          <li>
+                            <label class="width35per"> Contact Phone:</label>
+                            <input type="text" value="" class="textbox error-border" placeholder="(425) 1235 - 6426">
+                            <span class="error-icon"></span></li>
+                          <li>
+                            <label class="width35per"><span class="float-left lh50">E-Mail Alerts:</span>
+                              <input type="checkbox" name="1" id="1" class="styled">
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="span4">
+                        <ul class="register-form register-form1 ">
+                          <li>
+                            <label class="width35per">Business Logo:</label>
+                            <span class="photo-block"></span> <a class="btn btn-secondary  pull-right marr-35px" href="#">Upload Photo</a> </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="locations"  class="tab-pane fade  ">
+                  <div class="row-fluid">
+                    <div class="span12">
+                      <div class="info-block">
+                        <h5><a href="#" class="btn btn-medium-create pull-right">Add Location</a>Locations</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-fluid">
+                    <div class="span12 ">
+                      <div class="info-block">
+                        <div class="span4">
+                          <div class="img-block"><img width="147" height="114" alt="photo" src="../images/web/dashboard_img.png"></div>
+                          <div> </div>
+                        </div>
+                        <div class="span8">
+                          <h2><span class="border-gray1 pull-right"> </span>Peets Coffee &amp; Tea</h2>
+                          <div class="address1">201 Berry St<br>
+                            San Francisco, CA</div>
+                        </div>
+                      </div>
+                      <div class="info-block">
+                        <div class="span4">
+                          <div class="img-block"><img width="147" height="114" alt="photo" src="../images/web/dashboard_img.png"></div>
+                          <div> </div>
+                        </div>
+                        <div class="span8">
+                          <h2><span class="border-gray1 pull-right"> </span>Peets Coffee &amp; Tea</h2>
+                          <div class="address1">201 Berry St<br>
+                            San Francisco, CA</div>
+                        </div>
+                      </div>
+                      <div class="info-block">
+                        <div class="span4">
+                          <div class="img-block"><img width="147" height="114" alt="photo" src="../images/web/dashboard_img.png"></div>
+                          <div> </div>
+                        </div>
+                        <div class="span8">
+                          <h2><span class="border-gray1 pull-right"> </span>Peets Coffee &amp; Tea</h2>
+                          <div class="address1">201 Berry St<br>
+                            San Francisco, CA</div>
+                        </div>
+                      </div>
+                      <div class="info-block">
+                        <div class="span4">
+                          <div class="img-block"><img width="147" height="114" alt="photo" src="../images/web/dashboard_img.png"></div>
+                          <div> </div>
+                        </div>
+                        <div class="span8">
+                          <h2><span class="border-gray1 pull-right"> </span>Peets Coffee &amp; Tea</h2>
+                          <div class="address1">201 Berry St<br>
+                            San Francisco, CA</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="printqr"  class="tab-pane fade  ">
+                  <div class="row-fluid">
+                    <div class="span12">
+                      <div class="info-block">
+                        <h5>Print QR Code</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-fluid">
+                    <div class="span12 info-block1">
+                      <div class="register-info">Lorem ipsum oratio consul explicari duo te, civibus mnesarchum eum eu. Nec movet aliquam inermis at. Eos in quem fastidii. Mei dolores suscipit at, ea verear accommodare nam. Ex ius erroribus salutatus, usu ad doming iriure philosophia, eum.</div>
+                      <div>
+                        <ul class="qrcode-flyer">
+                          <li>
+                            <div class="border"> <img src="../images/web/flayer1.png"  alt="flyer1"> </div>
+                            <div class="text-center"><span class="border-gray1 mart15px"><a  href="#." class="btn btn-gray-edit">Download PDF</a></span></div>
+                          </li>
+                          <li>
+                            <div class="border"> <img src="../images/web/flayer2.png"  alt="flyer1"> </div>
+                            <div class="text-center"><span class="border-gray1 mart15px"><a  href="#." class="btn btn-gray-edit">Download PDF</a></span></div>
+                          </li>
+                          <li>
+                            <div class="border"> <img src="../images/web/flayer1.png"  alt="flyer1"> </div>
+                            <div class="text-center"><span class="border-gray1 mart15px"><a  href="#." class="btn btn-gray-edit">Download PDF</a></span></div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="span4 "> 
+            <div class="rightblock">
+              <!---- Promotion Usage ----->
+              <div class="marb-10px">
+                <h4>Promotion Usage</h4>
+                <div class="progress progress-striped active">
+                  <div class="bar" style="width: 40%;"></div>
+                </div>
+                <div> <span class="width37per"><span class="font12green">$6,532</span> <span class="font12">Budget</span></span> <span class="width37per"> <span class="font12">$2,231</span> <span class="font12">Spent</span></span> <a href="#" class="btn btn-small pull-right">Upgrade</a> </div>
+                <div class="clearfix"></div>
+              </div>
+              
+              <!---- Quick Stats ----->
+              <div class="marb-10px">
+                <h4>Quick Stats</h4>
+                <div class="tabbable" id="quickstats"> <!-- Only required for left/right tabs -->
+                  <ul class="nav nav-tabs nav-stats">
+                    <li><a href="#stats3" data-toggle="tab">YTD</a></li>
+                    <li><a href="#stats2" data-toggle="tab">90 Days</a></li>
+                    <li class="active"><a href="#stats1" data-toggle="tab">30 Days</a></li>
+                  </ul>
+                  <div class="tab-content stats-content">
+                    <div class="tab-pane active" id="stats1">
+                      <ul class="stats-list">
+                        <li>
+                          <div class="white-border"><span class="stats-name">Promoted</span><span class="stats-value">254</span></div>
+                          <div class="border-right"></div>
+                          <div class="stats-right"><span class="graph-per"></span><span>12.5%</span></div>
+                        </li>
+                        <li>
+                          <div class="white-border"><span class="stats-name">Claimed</span><span class="stats-value">254</span></div>
+                          <div class="border-right"></div>
+                          <div class="stats-right"><span class="graph-per"></span><span>12.5%</span></div>
+                        </li>
+                        <li>
+                          <div class="white-border"><span class="stats-name">Scanned</span><span class="stats-value">78</span></div>
+                          <div class="border-right"></div>
+                          <div class="stats-right"><span class="graph-per"></span><span>9.5%</span></div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="tab-pane" id="stats2">
+                      <ul class="stats-list">
+                        <li>
+                          <div class="white-border"><span class="stats-name">Claimed</span><span class="stats-value">254</span></div>
+                          <div class="border-right"></div>
+                          <div class="stats-right"><span class="graph-per"></span><span>12.5%</span></div>
+                        </li>
+                        <li>
+                          <div class="white-border"><span class="stats-name">Scanned</span><span class="stats-value">78</span></div>
+                          <div class="border-right"></div>
+                          <div class="stats-right"><span class="graph-per"></span><span>9.5%</span></div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="tab-pane" id="stats3">
+                      <ul class="stats-list">
+                        <li>
+                          <div class="white-border"><span class="stats-name">Promoted</span><span class="stats-value">254</span></div>
+                          <div class="border-right"></div>
+                          <div class="stats-right"><span class="graph-per"></span><span>12.5%</span></div>
+                        </li>
+                        <li>
+                          <div class="white-border"><span class="stats-name">Scanned</span><span class="stats-value">78</span></div>
+                          <div class="border-right"></div>
+                          <div class="stats-right"><span class="graph-per"></span><span>9.5%</span></div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              
+              <!---- Quick Stats ----->
+              <div class="marb-10px">
+                <h4><a href="#." class="pull-right black-link">View All</a>Top Promoters</h4>
+                <ul class="stats-list">
+                  <li>
+                    <div class="white-border-full"> Papa's Pizza</div>
+                  </li>
+                  <li>
+                    <div class="white-border-full"> Cinerama Theatre</div>
+                  </li>
+                  <li>
+                    <div class="white-border-full"> Toms Turkey Sandwhiches</div>
+                  </li>
+                  <li>
+                    <div class="white-border-full"> Bobs Burgers</div>
+                  </li>
+                  <li>
+                    <div class="white-border-full"> Sullys Icecream & Desserts</div>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <!--middle-container--> 
+  
+  <!--footer-container-->
+  <div class="row-fluid ">
+    <div class="span12 footer">
+      <label class="copywright">Crossper 2013</label>
+      <ul>
+        <li> <a href="#.">Blog</a></li>
+        <span> /</span>
+        <li> <a href="#.">Contact</a></li>
+        <span> /</span>
+        <li> <a href="#.">Sign-Up</a></li>
+      </ul>
+    </div>
+  </div>
+  <!--footer-container--> 
+</div>
+<!--fluid-container--> 
+<!-- javascript-->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../js/jquery-1.8.2.min.js" type="text/javascript"></script> 
+
+<script src="../js/web/jquery.jscrollpane.js" type="text/javascript"></script>
+<script src="../js/web/jquery.mousewheel.js" type="text/javascript"></script>
+
+
+<script src="../js/web/bootstrap.js" type="text/javascript" ></script> 
+<script src="../js/web/jquery.sb.js" type="text/javascript" ></script> 
+<script src="../js/web/common-js.js" type="text/javascript"></script> 
+<script src="../js/web/custom-form-elements.js" type="text/javascript" ></script>
+<script src="../js/web/bootstrap-datepicker.js" type="text/javascript"></script>
+<script type="text/javascript">
+ $('.datepicker').datepicker();
+</script>
+
+ 
+</body>
+</html>

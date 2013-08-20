@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+    <import resource="crossper-data-access.xml"/>
+    <import resource="crossper-services.xml"/>
+    <import resource="crossper-resources.xml"/>
+	<import resource="crossper-security.xml"/>
+    
+    <context:property-placeholder location="classpath:application.properties, classpath:mail.properties"/>
+
+    <mongo:mongo id="mongo" host="${mongodb.host}" port="${mongodb.port}" write-concern="SAFE"/>
+
+    <mongo:db-factory id="mongoDbFactory" mongo-ref="mongo" dbname="${mongodb.database}"/>
+
+    <bean id="messageResource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="/i18n/messages"/>
+    </bean>
+
+    <bean id="jongo" class="org.jongo.Jongo">
+        <constructor-arg name="database">
+            <bean factory-bean="mongoDbFactory" factory-method="getDb"/>
+        </constructor-arg>
+    </bean>
+
+    <task:annotation-driven executor="taskExecutor"/>
+
+    <task:executor id="taskExecutor" pool-size="5-20" queue-capacity="100" rejection-policy="CALLER_RUNS"/>
+
+    <bean id="applicationContextProvider" class="com.crossper.provider.ApplicationContextProvider"></bean>
+</beans>

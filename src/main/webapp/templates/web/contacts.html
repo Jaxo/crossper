@@ -1,0 +1,42 @@
+<!--middle-container-->
+  <div class="container-fluid ">
+    <div class="row-fluid ">
+      <div class="span12 graybg ">
+        <div class="outer-wrapper">
+          <div class=" signin-wrapper contact">
+            <div class="title">Contact Crossper</div>
+            <div class="signin-box">
+            <div class="span6">
+                  <p class="header-text">How can we help you? <br> If you have any suggestions about Crossper service or product, we would love to hear from you.  If your are experiencing any issues with our service let us know. Send us an email and we will respond quickly.</p>
+                  <div class="text">E-Mail <a name="contactEmail" href="mailto:{{contactEmail}}"> {{contactEmail}}</a></div>
+                  <div class="text" >Phone <span class="bluelink" name="contactPhone" >{{contactPhone}}</span></div>
+                   <div class="text"><span id="msg" class="msg-text error">{{msg}}</span></div>
+                </div>
+              <div class="span6">
+                  <form method="post" enctype="text/plain">
+                  <ul class="contact-form">
+                    <li>
+                      <input type="text" class="textbox" name ="senderName" value="{{senderName}}" placeholder="Name">
+                      <span class="sucess-icon" style="display:none;"></span>
+                    </li>
+                    <li>
+                      <input type="text" class="textbox" name="senderEmail" value="{{senderEmail}}" placeholder="E-Mail">
+                      <span class="sucess-icon" style="display:none;"></span>
+                    </li>
+                    <li>
+                      <textarea class="textarea" name="senderMessage" placeholder="Message">{{senderMessage}}</textarea>
+                      <span class="sucess-icon" style="display:none;"></span>
+                    </li>
+                    <li><a id="send-msg-btn" class="btn btn-primary big-buttontext pull-right">Send Message </a></li>
+                  </ul>                       
+                  </form>
+                </div>              
+              <div class=" clearfix"></div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!--middle-container--> 

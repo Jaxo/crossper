@@ -1,0 +1,18 @@
+/*Custom Checkbox & RadioButton*/
+.check-box-master{margin:5px;}
+.check-box-master li{margin:3px; padding:0px !important;}
+.check-box-master li label{vertical-align:middle;line-height:22px;}
+
+.checkbox, .radio {
+	width: 28px;
+	height: 28px;
+	padding: 0 5px 0 0;
+	background: url(../../images/web/checkbox.png) no-repeat;
+	display: block;
+	float: left;
+	margin: 0 10px;
+}
+.radio-button label{line-height:22px;vertical-align:middle; margin-right:10px}
+.radio {
+	background:  url(../../images/radio.png) no-repeat;
+}

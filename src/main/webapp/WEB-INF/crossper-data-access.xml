@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    
+    <bean id="userDao" class="com.crossper.repository.dao.impl.UserDaoImpl">
+       <constructor-arg name="jongo" ref="jongo"/>
+   </bean>
+   
+   <bean id="categoryDao" class="com.crossper.repository.dao.impl.BusinessCategoryDaoImpl">
+       <constructor-arg name="jongo" ref="jongo"/>
+   </bean>
+   
+    <bean id="offerDao" class="com.crossper.repository.dao.impl.OfferDaoImpl">
+       <constructor-arg name="jongo" ref="jongo"/>
+   </bean>
+   <bean id="userOfferDao" class="com.crossper.repository.dao.impl.UserOfferDaoImpl" >
+       <constructor-arg name="jongo" ref="jongo" />
+   </bean>
+     <bean id="bizDao" class="com.crossper.repository.dao.impl.BusinessDaoImpl">
+       <constructor-arg name="jongo" ref="jongo"/>
+   </bean>
+   <bean id="bizOfferDao" class="com.crossper.repository.dao.impl.BusinessOfferDaoImpl">
+       <constructor-arg name="jongo" ref="jongo"/>
+   </bean>
+    <bean id="bizStatsDao" class="com.crossper.repository.dao.impl.BusinessStatsDaoImpl">
+       <constructor-arg name="jongo" ref="jongo"/>
+   </bean>
+</beans>

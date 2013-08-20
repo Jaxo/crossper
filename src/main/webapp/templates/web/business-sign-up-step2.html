@@ -1,0 +1,83 @@
+<div class="container-fluid ">
+    <div class="row-fluid ">
+      <div class="span12 graybg ">
+        <div class="outer-wrapper">
+          <div class="register-wrapper">
+            <div class="register-steps-block">
+              <div class="register-steps-back">
+                <ul>
+                  <li  id="step1"><span class="number">1</span>
+                    <label class="text">Business Info</label>
+                  </li>
+                  <li class="active" id="step2"><span class="number">2</span>
+                    <label  class="text">Create Offers</label>
+                  </li>
+                  <li id="step3"><span class="number">3</span>
+                    <label  class="text">Confirmation</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+<!-- registration 2-->
+<div class="register-box" id="register2">
+              <div class="register-info">Provide special discounts and deals and attract new customers who access your offers via the Crossper mobile app at nearby businesses.  Once you’ve created your offer, it may go live within hours. To redeem, customers show you the offer on their mobile phones and you ask them to click the redeem button.  This way,  we can accurately keep track of your offer conversions.</div>
+              <ul class="register-form">
+                <li>
+                  <label class="width20per">Title:</label>
+                  <input type="text" name="title" value="{{title}}" class="textbox70 sucess-border">
+                  <span class="sucess-icon" style="display:none;"></span></li>
+                <li>
+                  <label class="width20per">Description:</label>
+                  <textarea name="description" class="textarea">{{description}}</textarea>
+                </li>
+                <li>
+                  <label class="width20per">Start Date:</label>
+                  <div class="input-append date" id="dpStartDate" data-date-format="mm/dd/yyyy">
+                  	<input type="text" name="startDate" value="{{startDate}}" class="span2" size="16" readonly>
+                  	<span class="add-on"><i class="icon-th"></i></span>
+                   </div>
+                </li>
+                <li>
+                  <label class="width20per">End Date:</label>
+                  <div class="input-append date" id="dpEndDate" data-date-format="mm/dd/yyyy">
+                  	<input type="text" name="endDate" value="{{endDate}}" class="span2" size="16" readonly>
+                   	<span class="add-on"><i class="icon-th"></i></span>
+                   </div>
+                </li>
+                <li>
+			<label class="width20per marginT8">Validity:</label> 
+			<span class="width65per"> 
+                     <input type="radio" class="float-left" id="radio-choice-1" name="validity" value="everyday" checked="checked"/>
+                     <label data-iconpos="right" class="qunty-label" for="radio-choice-1">Everyday</label>
+			</span> 
+			<span class="width65per"> 	
+                            <input type="radio" class="float-left" name="validity" id="radio-choice-2" value="weekdays"   />
+                            <label data-iconpos="right" for="radio-choice-2" class="qunty-label">Weekdays</label>
+			</span>
+                        <label class="width20per marginT8">&nbsp;</label>
+			<span class="width65per"> 
+			<input type="radio" class="float-left" name="validity" id="radio-choice-3" value="weekends"   />
+                        <label data-iconpos="right" for="radio-choice-3" class="qunty-label">Weekends Only</label>
+			</span>
+		</li>
+                <li>                    
+                  <label class="width20per"><span class="float-left marr-7px"> Limited Qty: </span>
+	                    {{#if limitedQuantity}}
+		                      <input type="checkbox" name="limitedQuantity" id="checkbox-1a" checked>
+		                {{else}}
+		                      <input type="checkbox" name="limitedQuantity" id="checkbox-1a" >
+	  					{{/if}}
+                    </label>
+                   
+                  <label class="width35per"> <span class="float-left marr-7px"> Quantity: </span>
+                  <input type="text" name="quantity" value="{{quantity}}" class="textbox-medium sucess-border" disabled="disabled">
+                  </label>
+                  <span class="sucess-icon" style="display:none;"></span>
+                </li>
+                <li>
+	                <a id="prev-btn" class="btn btn-primary big-buttontext pull-left ">Previous</a> 
+	                <a id="add-offer-btn" class="btn btn-primary big-buttontext pull-right marr-35px">Next</a> 
+	            </li>
+              </ul>
+              <div class=" clearfix"></div>
+            </div>

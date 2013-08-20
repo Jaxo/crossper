@@ -1,0 +1,32 @@
+ <div class="row-fluid ">
+      <div class="span12 graybg ">
+        <div class="outer-wrapper">
+          <div class="signin-wrapper">
+              <div id="activation" style="height: 20px;" > 
+                <span id="activationMsg" style="display:none" >Your business account is active now.</span>
+            </div>
+            <div class="title">Sign-In to Crossper</div>
+            <form id="sign-in-form" action="#">
+            <div class="signin-box">
+              <ul class="sighin-form">
+                <li>
+                  <input id="username" type="text" value="{{j_username}}" class="textbox success-border" placeholder="Username" name="j_username">
+                  <span id="unameStatus" class="sucess-icon"></span></li> 
+                <li>
+                  <input id="password" value="{{j_password}}" type="password" class="textbox success-border" placeholder="Password" name="j_password">
+                  <span id="pwStatus" class="sucess-icon"></span></li> 
+                  
+                <li><a id="sign-in-button" href="#." class="btn btn-primary big-buttontext pull-right marr-35px">Sign-In</a> <a href="#." class="fogotlink pull-right">Forgot Password</a></li>
+                 
+              </ul>
+              <div class=" clearfix"></div>
+              <div id="errorDiv" style="height: 20px;">
+					<span id="ErrorMsg" class="error-text"></span>
+		 </div>
+            </div>
+            </form>
+          </div>
+        </div>
+       
+      </div>
+    </div>

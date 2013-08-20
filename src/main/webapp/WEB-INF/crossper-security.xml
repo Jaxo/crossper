@@ -1,0 +1,146 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:security="http://www.springframework.org/schema/security"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+    
+     	<security:http pattern="/css/**"  security="none" />
+        <security:http pattern="/images/**"  security="none" />
+        <security:http pattern="/users/signup"  security="none" />
+     	<security:http pattern="/businesses/categories"  security="none" />
+        <!--<security:http pattern="/downloadedOffers"  security="none" /> -->
+        <security:http pattern="/businesses/contactCrossper" security="none" />
+     	<security:http pattern="/businesses/signup"  security="none" />
+        <security:http pattern="/businesses/activate"  security="none" />
+     	<security:http pattern="/businesses/*/businessPhoto"  security="none" />
+        <security:http pattern="/businesses/*/qrCode"  security="none" />
+        <security:http pattern="/businesses/*/emailQrCode"  security="none" />
+        <http pattern="/businesses/**" use-expressions="true" entry-point-ref="authenticationEntryPoint">
+            <intercept-url pattern="/**" access="isAuthenticated()" />
+        </http>
+        <http pattern="/consumers/**" use-expressions="true" entry-point-ref="authenticationEntryPointMobile">
+            <intercept-url pattern="/**" access="isAuthenticated()" />
+        </http>
+       
+        <http pattern="/users/login" use-expressions="true" entry-point-ref="authenticationEntryPointMobile">
+            <intercept-url pattern="/**" access="isAuthenticated()" />
+        </http>
+        <http pattern="/downloadedOffers/**" use-expressions="true"  entry-point-ref="authenticationEntryPointDownloadApp" >
+            <intercept-url pattern="/**" access="isAuthenticated()" />
+        </http>
+    <http pattern="/web/**"  use-expressions="true">
+        <intercept-url pattern="/web/" access="permitAll"/>
+         <intercept-url pattern="/web/signIn" access="permitAll"/>
+         <intercept-url pattern="/web/contacts" access="permitAll"/>
+         <intercept-url pattern="/web/j_spring_security_logout" access="permitAll" />
+         <intercept-url pattern="/businesses/**" access="hasRole('ROLE_BUSINESS')"/>
+        <form-login login-page="/web/signIn"
+                    login-processing-url="/web/j_spring_security_check"
+                    authentication-failure-url="/users/loginFailure"
+                    default-target-url="/users/login?error=false"/>
+        <custom-filter position="LOGOUT_FILTER" ref="logoutFilter" />
+    </http>
+    <!--org.springframework.security.web.authentication.logout.LogoutFilter -->
+    <beans:bean id="logoutFilter" class="org.springframework.security.web.authentication.logout.LogoutFilter">
+        <!--<custom-filter position="LOGOUT_FILTER" /> -->
+            <beans:constructor-arg value="/web/"/>
+            <beans:constructor-arg> <beans:list>
+             <beans:ref bean="rememberMeServices" />  
+            <beans:bean class="org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler"/>
+            </beans:list>
+        </beans:constructor-arg>
+        <beans:property name="filterProcessesUrl" value="/web/j_spring_security_logout" />
+    </beans:bean>  
+    <!-- Authentication Entry point is responsible for redirecting user to particular page-->
+    <beans:bean id="authenticationEntryPoint" class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+        <beans:property name="loginFormUrl" value="/web/signIn"/>
+    </beans:bean>
+     <beans:bean id="authenticationEntryPointMobile" class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+        <beans:property name="loginFormUrl" value="/mobile/"/>
+    </beans:bean>
+    <beans:bean id="authenticationEntryPointDownloadApp" class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+        <beans:property name="loginFormUrl" value="/web/"/>
+    </beans:bean>
+    <http pattern="/mobile/**"  use-expressions="true">
+        <intercept-url pattern="/mobile" access="permitAll"/>
+        <intercept-url pattern="/consumers/*" access="hasRole('ROLE_USER')"/>
+
+        <form-login login-page="/mobile/login"
+                    authentication-failure-url="/users/loginFailure"
+                    login-processing-url="/mobile/j_spring_security_check"
+                    default-target-url="/users/login"/>
+        <custom-filter ref="facebookLoginFilter" after="FORM_LOGIN_FILTER"/>
+         <custom-filter position="LOGOUT_FILTER" ref="mobileLogoutFilter" />
+    </http>
+    <beans:bean id="mobileLogoutFilter" class="org.springframework.security.web.authentication.logout.LogoutFilter">
+        <!--<custom-filter position="LOGOUT_FILTER" /> -->
+            <beans:constructor-arg value="/mobile/"/>
+            <beans:constructor-arg> <beans:list>
+             <beans:ref bean="rememberMeServices" />  
+            <beans:bean class="org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler"/>
+            </beans:list>
+        </beans:constructor-arg>
+        <beans:property name="filterProcessesUrl" value="/mobile/j_spring_security_logout" />
+    </beans:bean>  
+    <!--<beans:bean id="customAuthenticationSuccessHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler">
+        <beans:property name="defaultTargetUrl" value="/users/login"/>
+    </beans:bean> -->
+
+    <beans:bean id="userDetailsService" class="com.crossper.services.impl.CrossperUserDetailsService">
+        <beans:property name="userDao" ref="userDao"/>
+    </beans:bean>
+
+    <authentication-manager>
+        <authentication-provider user-service-ref="userDetailsService">
+            <password-encoder ref="passwordEncoder"/>
+        </authentication-provider>
+    </authentication-manager>
+
+    <authentication-manager id="facebookAuthManager">
+        <authentication-provider ref="rememberMeAuthenticationProvider"/>
+    </authentication-manager>
+
+    <beans:bean id="connectionFactoryLocator" class="org.springframework.social.connect.support.ConnectionFactoryRegistry">
+        <beans:property name="connectionFactories">
+            <beans:list>
+                <beans:bean class="org.springframework.social.facebook.connect.FacebookConnectionFactory">
+                    <beans:constructor-arg value="${facebook.clientId}"/>
+                    <beans:constructor-arg value="${facebook.clientSecret}"/>
+                </beans:bean>
+            </beans:list>
+        </beans:property>
+    </beans:bean>
+
+    <beans:bean id="autoLoginFilter" class="com.crossper.filters.AutoLoginFilter">
+        <beans:property name="connectionFactoryLocator" ref="connectionFactoryLocator"/>
+        <beans:property name="rememberMeServices" ref="rememberMeServices"/>
+    </beans:bean>
+
+    <beans:bean id="rememberMeServices" class="com.crossper.services.UserRememberMeServices">
+        <beans:property name="userDetailsService" ref="userDetailsService"/>
+        <beans:property name="cookieName" value="SOCIAL_APP_REMEMBER_ME_COOKIE"/>
+        <beans:property name="key" value="does_not_matter"/>
+        <beans:property name="tokenRepository">
+            <beans:bean class="com.crossper.repository.UserTokenRepository">
+                <beans:constructor-arg name="jongo" ref="jongo"/>
+            </beans:bean>
+        </beans:property>
+        <beans:property name="useSecureCookie" value="true"/>
+    </beans:bean>
+
+    <beans:bean class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" id="passwordEncoder"/>
+
+    <beans:bean id="facebookLoginFilter" class="com.crossper.filters.SocialAppAuthFilter">
+        <beans:property name="authenticationManager" ref="facebookAuthManager"/>
+        <beans:property name="rememberMeServices" ref="rememberMeServices"/>
+    </beans:bean>
+
+    <beans:bean id="rememberMeAuthenticationProvider" class=
+            "org.springframework.security.authentication.RememberMeAuthenticationProvider">
+        <beans:property name="key" value="springRocks"/>
+    </beans:bean>
+
+</beans:beans>

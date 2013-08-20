@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+          http://www.springframework.org/schema/beans/spring-beans.xsd 
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+        http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd
+          http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+     <bean id="userService" class="com.crossper.services.impl.UserServiceImpl" ></bean>
+     <bean id="offerService" class="com.crossper.services.impl.OfferServiceImpl" ></bean>
+     <bean id="bizService" class="com.crossper.services.impl.BusinessServiceImpl" >
+         <property name="qrCodeMessage" value="${crossper.qrCodeUrl}"/>
+         <property name="businessImagesFSPath" value="${images.filsystem.path}/business/"/>
+         <property name="activationUrl" value="${crossper.activationUrl}"/>
+
+     </bean>
+     <bean id="rankingService" class="com.crossper.services.impl.OfferRankingServiceImpl"> </bean>
+     <bean id ="googleService" class="com.crossper.repository.GoogleService">
+         <constructor-arg value= "${googleplaces.api.key}" />
+         <property name="placesDetailsAPI" value="${googleplaces.details.api}" />
+         <property name="placesSearchAPI" value="${googleplaces.search.api}" />
+         <property name="geoCodeAPI" value="${google.geocode.api}" />
+     </bean>
+     <util:properties id="mailProperties" location="classpath:mail.properties"/>
+  
+    <bean id="freemarkerConfiguration" class="org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean" p:templateLoaderPath="classpath:/template/email"/>
+
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl" p:username="${mailserver.user}" p:password="${mailserver.password}" p:javaMailProperties-ref="mailProperties"/>
+    <bean id="emailService" class="com.crossper.services.impl.EmailServiceImpl" >
+      <property name="mailSender" ref="mailSender"></property>
+      <property name="freemarkerConfiguration" ref="freemarkerConfiguration" />
+    </bean>
+    
+   
+    <bean id="qrCodeHelper" class="com.crossper.utils.QRCodeHelper" >
+        <property name="qrCodeDir" value="${qrcode.file.dir}"/>
+        <property name="overlays"> 
+            <list>
+                <bean class="com.crossper.models.QRCodeOverlay">
+                    <property name="x" value ="154" />
+                    <property name="y" value ="300" />
+                </bean>
+            </list>
+        </property>
+    </bean>
+    <bean id="statsService" class="com.crossper.services.impl.StatisticsServiceImpl" >
+        
+    </bean>
+</beans>
