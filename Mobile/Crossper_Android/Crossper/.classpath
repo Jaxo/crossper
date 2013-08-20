@@ -7,6 +7,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
-	<classpathentry kind="lib" path="/home/pgr/crossper/Mobile/Crossper_Android/Crossper/libs/core-2.3-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="libs/core-2.3-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
