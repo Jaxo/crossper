@@ -1,0 +1,55 @@
+-------------------- Tuesday August 20, 2013 --------------------
+<Commands>
+cd ~
+git clone https://latone@bitbucket.org/vinaygoel/crossper.git
+git checkout -b Vidal   # created my own branch.  sufgest you do the same
+</Commands>
+
+OK: the code confirms it.  Those are newbies of the pure species.
+Need ZXing.  They use deprecated 2.1.
+(a crude download is much easier than a true build, hey?)
+I use 2.3.  Requires Maven.
+
+Read:
+http://code.google.com/p/zxing/wiki/GettingStarted
+
+<Commands>
+cd ~
+git clone https://github.com/zxing/zxing.git
+cd zxing
+~/android-sdks/tools/android update project --path android
+cd core
+# create ~/zxing/core/target/core-2.3-SNAPSHOT.jar
+mvn -DskipTests -Dgpg.skip=true install
+</Commands>
+
+But we don't need all the core!  PDF417, Aztec?  Later.
+Open Eclipse, Create android project from existing code,
+Path ~/crossper/Mobile/Crossper_Android/Crossper
+=> Project 'Crossper' is missing required library:
+   '/Users/shyamgosavi/Documents/Projects/zxing-2.1/core/core.jar'
+Running Windoze + hardcoded path, Mr Shyamgosavi.  Clever!
+No time for symlinks or submodules...
+
+<Commands>
+cp ~/zxing/core/target/core-2.3-SNAPSHOT.jar ~/crossper/Mobile/Crossper_Android/Crossper/libs
+</Commands>
+and modify eclipse Properties->Java Build Path -> suppress the dangling, add external jars...
+
+408 warnings!  Thanks Sean.
+But, hmmm,  what?  408 warnings in **ZXing**?
+Mamma mia: they copied the Zxing source!
+And they have all bin checked in Bitbucket.  Youppiiiiiiiiiiie!
+<Commands>
+rm -rf /crossper/Mobile/Crossper_Android/Crossper/src/com/google
+rm -rf /crossper/Mobile/Crossper_Android/Crossper/bin
+</Commands>
+
+Noon. I was able to run the Android Simulator.
+Evening:
+Trying to push my branch...  Created the SSH key, etc, etc.
+No success b/c this BitBucket is read-only.
+Well: use our good'ol github.  That is:
+https://github.com/Jaxo/crossper
+
+
