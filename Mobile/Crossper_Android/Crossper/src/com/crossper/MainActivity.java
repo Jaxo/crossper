@@ -22,7 +22,8 @@ import android.widget.Button;
 
 @SuppressLint("SetJavaScriptEnabled")
 public class MainActivity extends Activity { // implements CordovaInterface{
-   Button scanBarCode,buttonfacebook;
+   Button scanBarCode;
+   Button buttonfacebook;
 // CordovaWebView webView;
    private WebView webView;
    private String TAG = "Crossper";
